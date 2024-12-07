@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .offer-banner {
+      background-color: #ffd700;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .main-content h2 {
+      text-align: center;
+    }
+    .credit-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .credit-control .credit-value {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 20px;
+    }
+    .payment-options {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    .payment-options button {
+      background-color: #ddd;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .payment-options .active {
+      background-color: #ffd700;
+    }
+    .installments h3 {
+      text-align: center;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+    }
+    .continue-button {
+      background-color: #28a745;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Klubi | Compra Planejada</h1>
+    </header>
+
+    <div class="offer-banner">
+      Você ganhou uma oferta especial!
+    </div>
+
+    <div class="main-content">
+      <h2>Conquiste um celular de</h2>
+      <img src="images (38).jpeg" alt="iPhone 12 Pro 256GB" style="width:100%; max-width:400px; margin: 20px auto; display: block;">
+      <h3>iPhone 12 Pro 256GB</h3>
+      <div class="credit-control">
+        <span class="credit-value">R$ 4.500,00</span>
+      </div>
+
+      <div class="payment-options">
+        <button class="payment-term active">Em 24 meses</button>
+      </div>
+
+      <div class="installments">
+        <p>com 24 mensalidades de</p>
+        <h3>R$ 187,50</h3>
+      </div>
+      <p class="discount">Ganhe 50% de desconto na 1ª mensalidade</p>
+    </div>
+
+    <footer>
+      <button class="continue-button" onclick="window.location.href='finalizacao.html'">Finalizar Compra</button>
+    </footer>
+  </div>
+</body>
+</html>
