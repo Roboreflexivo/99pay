@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -56,6 +57,20 @@
       font-size: 16px;
       cursor: pointer;
     }
+    .processing {
+      display: none;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .processing h2 {
+      font-size: 24px;
+      color: #333;
+    }
+    .countdown {
+      font-size: 48px;
+      font-weight: bold;
+      color: #28a745;
+    }
   </style>
 </head>
 <body>
@@ -64,8 +79,12 @@
     VOCÊ RECEBE O PRODUTO EM ATÉ 5 DIAS ÚTEIS APÓS PAGAMENTO DA PRIMEIRA PARCELA
   </div>
 
-  <h1>Informe seus dados</h1>
-  <form action="pagamento.html" method="get">
+  <h1>Informe seus dados para análise de crédito</h1>
+  <p style="text-align: center; font-size: 16px; color: #555;">
+    Por favor, preencha os campos abaixo para que possamos realizar uma análise de crédito rápida e segura. 
+    Garantimos que todos os dados fornecidos estarão protegidos de acordo com a <strong>Lei Geral de Proteção de Dados (LGPD).</strong>
+  </p>
+  <form id="creditForm">
     <label for="nome">Nome completo</label>
     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
@@ -83,5 +102,34 @@
 
     <button type="submit">Enviar</button>
   </form>
+
+  <div class="processing" id="processing">
+    <h2>Estamos analisando seus dados...</h2>
+    <p>Por favor, aguarde enquanto processamos sua solicitação.</p>
+    <div class="countdown" id="countdown">15</div>
+  </div>
+
+  <script>
+    const form = document.getElementById('creditForm');
+    const processingDiv = document.getElementById('processing');
+    const countdownElement = document.getElementById('countdown');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Impede o envio padrão do formulário
+      form.style.display = 'none'; // Esconde o formulário
+      processingDiv.style.display = 'block'; // Mostra a área de processamento
+
+      // Inicia a contagem regressiva
+      let countdown = 15;
+      const interval = setInterval(() => {
+        countdown -= 1;
+        countdownElement.textContent = countdown;
+        if (countdown === 0) {
+          clearInterval(interval); // Para a contagem quando chegar a 0
+          window.location.href = "pagamento.html"; // Redireciona para a página de pagamento
+        }
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
