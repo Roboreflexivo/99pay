@@ -15,7 +15,9 @@
       max-width: 600px;
       margin: 0 auto;
       background: #fff;
-      padding: 20px;                                                              border-radius: 10px;                                                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
     header {
@@ -27,71 +29,85 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
-    .product-image {
-      width: 100%;
-      max-width: 400px;
-      margin: 20px auto;
-      border-radius: 10px;
+    .contract {
+      margin-top: 30px;
+      font-size: 16px;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .contract .bold {
+      font-weight: bold;
     }
     .pix-section {
       margin: 20px 0;
     }
-    .pix-code {
-      background: #f5f5f5;
-      border: 1px dashed #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-family: monospace;
-      color: #333;
-      word-wrap: break-word;
-      margin-bottom: 10px;
-    }
-    .copy-button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .copy-button:hover {
-      background-color: #0056b3;
-    }
     footer {
       margin-top: 20px;
     }
-  </style>
-  <script>
-    function copyToClipboard() {
-      const pixCode = document.getElementById("pixCode").textContent;
-      navigator.clipboard.writeText(pixCode).then(() => {
-        alert("Código Pix copiado com sucesso!");
-      }).catch(err => {
-        alert("Erro ao copiar o código Pix: " + err);
-      });
+    .finalize-button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
     }
-  </script>
+    .finalize-button:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Finalize agora sua compra!!</h1>
+      <h1>Finalize agora sua compra!</h1>
     </header>
-    <p class="success-message">Parabéns! Sua Solicitação de compra foi concluída, finalize o pagamento e receberá instruções de recebimento do aparelho e a 2ª via do contrato. PARABÉNS 🎊</p>
-    <img src="IMG-20241206-WA2155.jpg" alt="Imagem de finalização" class="product-image">
-    <div class="pix-section">
-      <h2>Faça o pagamento via Pix</h2>
-      <p>Utilize o código Pix abaixo para concluir o pagamento:</p>
-      <div id="pixCode" class="pix-code">
-        00020126580014BR.GOV.BCB.PIX01360bb07ceb-96a0-4d48-b62e-29973d10b7645204000053039865406187.505802BR5925Diego Vinicius Coelho Fur6009SAO PAULO621405101qyc2pf7v66304DC42
-      </div>
-      <button class="copy-button" onclick="copyToClipboard()">Copiar Código Pix</button>
+    <p class="success-message">Parabéns! Sua solicitação de compra foi concluída. Finalize o pagamento e em breve você receberá o aparelho e a 2ª via do contrato. PARABÉNS 🎊</p>
+    
+    <div class="contract">
+      <h2>Contrato de Compra</h2>
+      <p><span class="bold">Cliente:</span> <span id="nome"></span></p>
+      <p><span class="bold">CPF:</span> <span id="cpf"></span></p>
+      <p><span class="bold">Endereço:</span> <span id="endereco"></span></p>
+      <p><span class="bold">Data de Nascimento:</span> <span id="dataNascimento"></span></p>
+      <p><span class="bold">E-mail:</span> <span id="email"></span></p>
+
+      <h3>Detalhes da Compra:</h3>
+      <p><span class="bold">Produto:</span> iPhone 12 Pro 256GB Cinza</p>
+      <p><span class="bold">Preço:</span> R$ 4.500,00</p>
+      <p><span class="bold">Parcelamento:</span> 24x de R$ 187,50</p>
+      <p><span class="bold">Desconto na 1ª Parcela:</span> 50%</p>
+
+      <p><span class="bold">CNPJ da Empresa:</span> 12.345.678/0001-99</p>
+      <p><span class="bold">Data de Vencimento do Pagamento:</span> <span id="vencimento"></span></p>
+
+      <h3>Termos de Contrato</h3>
+      <p>Ao realizar a compra do produto, o cliente concorda com as condições de pagamento descritas acima. O valor total de R$ 4.500,00 será dividido em 24 parcelas de R$ 187,50, com a primeira parcela com 50% de desconto. O cliente se compromete a realizar o pagamento das parcelas conforme o acordo.</p>
+      <p>O cliente receberá o produto em até 5 dias úteis após o pagamento da primeira parcela. Em caso de inadimplência, o contrato estará sujeito a ajustes e multas conforme a legislação vigente.</p>
     </div>
-    <footer>
-      <p>Obrigado por comprar com a Klubi | Compra Planejada.</p>
-    </footer>
+
+    <!-- Botão para finalizar a compra -->
+    <button class="finalize-button" onclick="window.location.href='finalizado.html'">Finalizar Compra</button>
   </div>
+
+  <script>
+    // Função para preencher os dados do formulário no contrato
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('nome').textContent = params.get('nome');
+      document.getElementById('cpf').textContent = params.get('cpf');
+      document.getElementById('endereco').textContent = params.get('endereco');
+      document.getElementById('dataNascimento').textContent = params.get('dataNascimento');
+      document.getElementById('email').textContent = params.get('email');
+
+      // Gerar a data de vencimento aleatória
+      const today = new Date();
+      const vencimento = new Date(today.getFullYear(), today.getMonth() + 1, Math.floor(Math.random() * 28) + 1);
+      document.getElementById('vencimento').textContent = vencimento.toLocaleDateString();
+    }
+  </script>
+
 </body>
 </html>
