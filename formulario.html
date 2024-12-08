@@ -56,26 +56,18 @@
       font-size: 16px;
       cursor: pointer;
     }
-    .processing {
-      text-align: center;
-      display: none;
-    }
-    .countdown {
-      font-size: 30px;
-      font-weight: bold;
-      color: #28a745;
-    }
   </style>
 </head>
 <body>
-
   <div class="highlight">
-    KLUBI/COMPRA PLANEJADA NO CARNÊ <br>
+    KLUBI/COMPRA PLANEJADA NO CARNE <br>
     VOCÊ RECEBE O PRODUTO EM ATÉ 5 DIAS ÚTEIS APÓS PAGAMENTO DA PRIMEIRA PARCELA
   </div>
 
-  <h1>Informe seus dados</h1>
-  <form id="creditForm" method="GET" action="finalizacao.html">
+  <h1>Informe alguns dados para análise de crédito</h1>
+  <p style="text-align: center;">Garantimos a proteção dos seus dados, conforme a Lei Geral de Proteção de Dados (LGPD).</p>
+  
+  <form action="finalizacao.html" method="get" id="creditForm">
     <label for="nome">Nome completo</label>
     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
@@ -93,35 +85,5 @@
 
     <button type="submit">Enviar</button>
   </form>
-
-  <div class="processing" id="processing">
-    <h2>Estamos analisando seus dados...</h2>
-    <p>Por favor, aguarde enquanto processamos sua solicitação.</p>
-    <div class="countdown" id="countdown">15</div>
-  </div>
-
-  <script>
-    const form = document.getElementById('creditForm');
-    const processingDiv = document.getElementById('processing');
-    const countdownElement = document.getElementById('countdown');
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault(); // Impede o envio padrão do formulário
-      form.style.display = 'none'; // Esconde o formulário
-      processingDiv.style.display = 'block'; // Mostra a área de processamento
-
-      // Inicia a contagem regressiva
-      let countdown = 15;
-      const interval = setInterval(() => {
-        countdown -= 1;
-        countdownElement.textContent = countdown;
-        if (countdown === 0) {
-          clearInterval(interval); // Para a contagem quando chegar a 0
-          form.submit(); // Envia o formulário depois de 15 segundos
-        }
-      }, 1000);
-    });
-  </script>
-
 </body>
 </html>
