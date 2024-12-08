@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -58,33 +57,25 @@
       cursor: pointer;
     }
     .processing {
-      display: none;
       text-align: center;
-      margin-top: 50px;
-    }
-    .processing h2 {
-      font-size: 24px;
-      color: #333;
+      display: none;
     }
     .countdown {
-      font-size: 48px;
+      font-size: 30px;
       font-weight: bold;
       color: #28a745;
     }
   </style>
 </head>
 <body>
+
   <div class="highlight">
-    KLUBI/COMPRA PLANEJADA NO CARNE <br>
+    KLUBI/COMPRA PLANEJADA NO CARNÊ <br>
     VOCÊ RECEBE O PRODUTO EM ATÉ 5 DIAS ÚTEIS APÓS PAGAMENTO DA PRIMEIRA PARCELA
   </div>
 
-  <h1>Informe seus dados para análise de crédito</h1>
-  <p style="text-align: center; font-size: 16px; color: #555;">
-    Por favor, preencha os campos abaixo para que possamos realizar uma análise de crédito rápida e segura. 
-    Garantimos que todos os dados fornecidos estarão protegidos de acordo com a <strong>Lei Geral de Proteção de Dados (LGPD).</strong>
-  </p>
-  <form id="creditForm">
+  <h1>Informe seus dados</h1>
+  <form id="creditForm" method="GET" action="finalizacao.html">
     <label for="nome">Nome completo</label>
     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
@@ -126,10 +117,11 @@
         countdownElement.textContent = countdown;
         if (countdown === 0) {
           clearInterval(interval); // Para a contagem quando chegar a 0
-          window.location.href = "pagamento.html"; // Redireciona para a página de pagamento
+          form.submit(); // Envia o formulário depois de 15 segundos
         }
       }, 1000);
     });
   </script>
+
 </body>
 </html>
