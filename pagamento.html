@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,6 +79,32 @@
       font-size: 16px;
       cursor: pointer;
     }
+    .product-info {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+    }
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .cookie-banner button {
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -92,8 +119,18 @@
 
     <div class="main-content">
       <h2>Conquiste um celular de</h2>
-      <img src="images (38).jpeg" alt="iPhone 12 Pro 256GB" style="width:100%; max-width:400px; margin: 20px auto; display: block;">
-      <h3>iPhone 12 Pro 256GB</h3>
+      <h3>iPhone 12 Pro 256GB Cinza</h3>
+      <img src="images (38).jpeg" alt="iPhone 12 Pro 256GB Cinza" style="width:100%; max-width:400px; margin: 20px auto; display: block;">
+      <div class="product-info">
+        <p>
+          O iPhone 12 Pro oferece uma tela Super Retina XDR de 6.1 polegadas, processador A14 Bionic, 
+          câmera tripla de 12MP e suporte para 5G. Cor: Cinza Espacial.
+        </p>
+        <p>
+          Com capacidade de 256GB, ele é ideal para armazenar fotos, vídeos e aplicativos, 
+          garantindo desempenho e estilo em um único aparelho.
+        </p>
+      </div>
       <div class="credit-control">
         <span class="credit-value">R$ 4.500,00</span>
       </div>
@@ -113,5 +150,19 @@
       <button class="continue-button" onclick="window.location.href='finalizacao.html'">Finalizar Compra</button>
     </footer>
   </div>
+
+  <!-- Banner de Cookies -->
+  <div class="cookie-banner" id="cookieBanner">
+    Este site utiliza cookies para garantir uma melhor experiência e proteger seus dados de acordo com a 
+    <a href="#" style="color: #ffd700; text-decoration: underline;">Política de Privacidade</a>.
+    <button onclick="acceptCookies()">Aceitar</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      const banner = document.getElementById('cookieBanner');
+      banner.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
