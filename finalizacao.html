@@ -38,12 +38,6 @@
     .contract .bold {
       font-weight: bold;
     }
-    .pix-section {
-      margin: 20px 0;
-    }
-    footer {
-      margin-top: 20px;
-    }
     .finalize-button {
       background-color: #28a745;
       color: white;
@@ -64,7 +58,7 @@
     <header>
       <h1>Finalize agora sua compra!</h1>
     </header>
-    <p class="success-message">Parabéns! Sua solicitação de compra foi concluída. Finalize o pagamento e em breve você receberá o aparelho e a 2ª via do contrato. PARABÉNS 🎊</p>
+    <p class="success-message">Parabéns! Sua solicitação de compra foi concluída. Veja os detalhes do contrato abaixo:</p>
     
     <div class="contract">
       <h2>Contrato de Compra</h2>
@@ -84,16 +78,13 @@
       <p><span class="bold">Data de Vencimento do Pagamento:</span> <span id="vencimento"></span></p>
 
       <h3>Termos de Contrato</h3>
-      <p>Ao realizar a compra do produto, o cliente concorda com as condições de pagamento descritas acima. O valor total de R$ 4.500,00 será dividido em 24 parcelas de R$ 187,50, com a primeira parcela com 50% de desconto. O cliente se compromete a realizar o pagamento das parcelas conforme o acordo.</p>
-      <p>O cliente receberá o produto em até 5 dias úteis após o pagamento da primeira parcela. Em caso de inadimplência, o contrato estará sujeito a ajustes e multas conforme a legislação vigente.</p>
+      <p>Ao realizar a compra do produto, o cliente concorda com as condições de pagamento descritas acima.</p>
     </div>
 
-    <!-- Botão para finalizar a compra -->
     <button class="finalize-button" onclick="window.location.href='finalizado.html'">Finalizar Compra</button>
   </div>
 
   <script>
-    // Função para preencher os dados do formulário no contrato
     window.onload = function() {
       const params = new URLSearchParams(window.location.search);
       document.getElementById('nome').textContent = params.get('nome');
@@ -101,13 +92,11 @@
       document.getElementById('endereco').textContent = params.get('endereco');
       document.getElementById('dataNascimento').textContent = params.get('dataNascimento');
       document.getElementById('email').textContent = params.get('email');
-
-      // Gerar a data de vencimento aleatória
+      
       const today = new Date();
       const vencimento = new Date(today.getFullYear(), today.getMonth() + 1, Math.floor(Math.random() * 28) + 1);
       document.getElementById('vencimento').textContent = vencimento.toLocaleDateString();
     }
   </script>
-
 </body>
 </html>
