@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagamento</title>
+  <title>Pagamento - iPhone 12 Pro 256GB</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -32,8 +32,23 @@
       font-weight: bold;
       margin-bottom: 20px;
     }
-    .main-content h2 {
+    .product-info {
       text-align: center;
+    }
+    .product-info img {
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+    }
+    .product-info h2 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .product-info p {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0;
     }
     .credit-control {
       display: flex;
@@ -67,8 +82,10 @@
       margin: 20px 0;
     }
     .discount {
+      font-size: 14px;
       text-align: center;
-      margin: 10px 0;
+      color: #28a745;
+      font-weight: bold;
     }
     footer {
       text-align: center;
@@ -82,40 +99,54 @@
       font-size: 16px;
       cursor: pointer;
     }
+    .verified-seal {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .verified-seal img {
+      width: 100px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Klubi | Compra Planejada</h1>
+      <h1>Pagamento - iPhone 12 Pro 256GB Cinza</h1>
     </header>
 
     <div class="offer-banner">
       Você ganhou uma oferta especial!
     </div>
 
-    <div class="main-content">
-      <h2>Conquiste um celular de</h2>
-      <img src="images (38).jpeg" alt="iPhone 12 Pro 256GB" style="width:100%; max-width:400px; margin: 20px auto; display: block;">
-      <h3>iPhone 12 Pro 256GB</h3>
-      <div class="credit-control">
-        <span class="credit-value">R$ 4.500,00</span>
-      </div>
-
-      <div class="payment-options">
-        <button class="payment-term active">Em 24 meses</button>
-      </div>
-
-      <div class="installments">
-        <p>com 24 mensalidades de</p>
-        <h3>R$ 187,50</h3>
-      </div>
-      <p class="discount">Ganhe 50% de desconto na 1ª mensalidade</p>
+    <div class="product-info">
+      <img src="https://www.apple.com/v/iphone-12/i/overview/hero/iphone-12-pro-256gb-grey.jpg" alt="iPhone 12 Pro 256GB Cinza">
+      <h2>iPhone 12 Pro 256GB - Cinza Espacial</h2>
+      <p><strong>Características:</strong></p>
+      <p>- Tela Super Retina XDR de 6,1 polegadas</p>
+      <p>- Chip A14 Bionic, o mais rápido em um smartphone</p>
+      <p>- Sistema de câmeras triplo de 12 MP (Ultra-angular, Grande-angular e Teleobjetiva)</p>
+      <p>- Tecnologia 5G para velocidade ultra-rápida</p>
+      <p>- Capacidade: 256 GB</p>
+      <p>- Cor: Cinza Espacial</p>
     </div>
+
+    <div class="credit-control">
+      <span class="credit-value">R$ 4.500,00</span>
+    </div>
+
+    <div class="payment-options">
+      <button class="payment-term active">Em 24 meses</button>
+    </div>
+
+    <div class="installments">
+      <p>com 24 mensalidades de</p>
+      <h3>R$ 187,50</h3>
+    </div>
+    <p class="discount">Ganhe 50% de desconto na 1ª mensalidade</p>
 
     <footer>
       <form id="paymentForm" action="finalizacao.html" method="get">
-        <!-- Campos ocultos para enviar os dados para finalizacao.html -->
         <input type="hidden" id="nome" name="nome">
         <input type="hidden" id="cpf" name="cpf">
         <input type="hidden" id="endereco" name="endereco">
@@ -124,6 +155,10 @@
         <button type="submit" class="continue-button">Finalizar Compra</button>
       </form>
     </footer>
+
+    <div class="verified-seal">
+      <img src="https://www.pngitem.com/pimgs/m/516-5163699_verified-trusted-seal-transparent-trusted-seal-png.png" alt="Selo de Página Verificada">
+    </div>
   </div>
 
   <script>
